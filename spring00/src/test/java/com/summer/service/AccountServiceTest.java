@@ -2,21 +2,23 @@ package com.summer.service;
 
 import com.summer.domain.Account;
 import config.SpringConfiguration;
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
+// 替换Junit runner
+@RunWith(SpringJUnit4ClassRunner.class)
+// 告诉Junit 用xml还是注解方式加载容器
+@ContextConfiguration(classes = SpringConfiguration.class)
 public class AccountServiceTest {
 
-    private ApplicationContext application = null;
-
-    @Before
-    public void init() {
-        this.application = new AnnotationConfigApplicationContext(SpringConfiguration.class);
-    }
+    @Autowired
+    private ApplicationContext application;
 
     @Test
     public void TestFindAll() {
