@@ -9,9 +9,13 @@ public interface IAccountService {
 
     Account findById(Integer id);
 
+    Account findByName(String name);
+
     void saveAccount(Account account);
 
     void updateAccount(Account account);
 
     void delAccount(Integer id);
+
+    void transfer(String sourceName, String targetName, Float money);
 }
