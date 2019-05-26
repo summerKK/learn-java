@@ -1,18 +1,26 @@
 package com.summer.service;
 
 import com.summer.domain.Account;
+import config.SpringConfiguration;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.List;
 
 public class AccountServiceTest {
 
+    private ApplicationContext application = null;
+
+    @Before
+    public void init() {
+        this.application = new AnnotationConfigApplicationContext(SpringConfiguration.class);
+    }
+
     @Test
     public void TestFindAll() {
-        ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");
-        IAccountService accountService = ac.getBean("accountService", IAccountService.class);
+        IAccountService accountService = application.getBean("accountService", IAccountService.class);
         List<Account> all = accountService.findAll();
         for (Account account : all) {
             System.out.println(account);
@@ -21,16 +29,14 @@ public class AccountServiceTest {
 
     @Test
     public void TestFindOne() {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
-        IAccountService accountService = context.getBean("accountService", IAccountService.class);
+        IAccountService accountService = application.getBean("accountService", IAccountService.class);
         Account account = accountService.findById(1);
         System.out.println(account);
     }
 
     @Test
     public void TestUpdate() {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
-        IAccountService accountService = context.getBean("accountService", IAccountService.class);
+        IAccountService accountService = application.getBean("accountService", IAccountService.class);
         Account account = new Account();
         account.setId(1);
         account.setMoney(12.11f);
