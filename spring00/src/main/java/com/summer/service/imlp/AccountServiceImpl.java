@@ -3,7 +3,6 @@ package com.summer.service.imlp;
 import com.summer.dao.IAccountDao;
 import com.summer.domain.Account;
 import com.summer.service.IAccountService;
-import com.summer.utils.TransactionManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +13,6 @@ public class AccountServiceImpl implements IAccountService {
 
     @Autowired
     private IAccountDao accountDao;
-
-    @Autowired
-    private TransactionManager transactionManager;
 
     public List<Account> findAll() {
         return accountDao.findAll();

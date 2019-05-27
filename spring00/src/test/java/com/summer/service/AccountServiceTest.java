@@ -4,6 +4,7 @@ import com.summer.domain.Account;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -16,6 +17,8 @@ import java.util.List;
 public class AccountServiceTest {
 
     @Autowired
+    // 使用代理对象产生的accountService
+    @Qualifier("proxyAccountService")
     private IAccountService accountService;
 
     @Test
@@ -39,16 +42,10 @@ public class AccountServiceTest {
         account.setMoney(12.11f);
         account.setName("Summer");
         accountService.updateAccount(account);
-
-        Account account1 = accountService.findById(1);
-        System.out.println(account1);
-
     }
 
     @Test
     public void TestTransfer() {
         accountService.transfer("ccc", "bbb", 100f);
-        System.out.println(accountService.findByName("ccc"));
-        System.out.println(accountService.findByName("bbb"));
     }
 }

@@ -9,6 +9,9 @@
 
     <context:component-scan base-package="com.summer"></context:component-scan>
 
+    <!-- 通过代理对象产生的accountService -->
+    <bean id="proxyAccountService" factory-bean="beanFactory" factory-method="getAccountService"></bean>
+
     <!--配置queryRunner-->
     <bean id="runner" class="org.apache.commons.dbutils.QueryRunner" scope="prototype"></bean>
 
