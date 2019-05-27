@@ -4,6 +4,9 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+/**
+ * 基于接口的动态代理实现
+ */
 public class Consume {
 
     public static void main(String[] args) {
