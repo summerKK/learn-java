@@ -54,9 +54,16 @@
 
     <aop:config>
         <!--配置切面-->
+        <aop:pointcut id="pt1" expression="execution(* com.summer.service.impl.*.*(..))"/>
         <aop:aspect id="logAdvice" ref="logger">
-            <!-- 配置通知的类型，并且建立通知方法和切入点方法的关联-->
-            <aop:before method="saveLog" pointcut="execution(* com.summer.service.impl.*.*(..))"></aop:before>
+            <!-- 配置前置通知-->
+            <aop:before method="beforeWrite" pointcut-ref="pt1"></aop:before>
+            <!--后置通知-->
+            <aop:after-returning method="afterReturningWrite" pointcut-ref="pt1"></aop:after-returning>
+            <!--异常通知-->
+            <aop:after-throwing method="afterThrowingWrite" pointcut-ref="pt1"></aop:after-throwing>
+            <!--最终通知-->
+            <aop:after method="afterWrite" pointcut-ref="pt1"></aop:after>
         </aop:aspect>
     </aop:config>
 
