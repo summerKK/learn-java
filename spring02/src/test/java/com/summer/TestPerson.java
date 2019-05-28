@@ -18,4 +18,9 @@ public class TestPerson {
     public void TestSleep() {
         person.sleep(1);
     }
+
+    @Test
+    public void TestWork() {
+        person.work();
+    }
 }

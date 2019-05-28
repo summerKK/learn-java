@@ -54,7 +54,8 @@
 
     <aop:config>
         <!--配置切面-->
-        <aop:pointcut id="pt1" expression="execution(* com.summer.service.impl.*.*(..))"/>
+        <aop:pointcut id="pt1" expression="execution(* com.summer.service.impl.*.sleep(..))"/>
+        <aop:pointcut id="pt2" expression="execution(* com.summer.service.impl.*.work(..))"/>
         <aop:aspect id="logAdvice" ref="logger">
             <!-- 配置前置通知-->
             <aop:before method="beforeWrite" pointcut-ref="pt1"></aop:before>
@@ -64,6 +65,8 @@
             <aop:after-throwing method="afterThrowingWrite" pointcut-ref="pt1"></aop:after-throwing>
             <!--最终通知-->
             <aop:after method="afterWrite" pointcut-ref="pt1"></aop:after>
+            <!--环绕通知-->
+            <aop:around method="aroundWrite" pointcut-ref="pt2"></aop:around>
         </aop:aspect>
     </aop:config>
 
