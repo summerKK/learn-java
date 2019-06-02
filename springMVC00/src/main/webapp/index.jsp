@@ -14,5 +14,14 @@
 <div>
     <a href="say-hello">say-hello</a>
 </div>
+<div>
+    <h1>params</h1>
+    <form action="params" method="post">
+        id: <input type="text" name="id">
+        username <input type="text" name="user.username">
+        sex <input type="text" name="user.sex">
+        <button>提交</button>
+    </form>
+</div>
 </body>
 </html>
