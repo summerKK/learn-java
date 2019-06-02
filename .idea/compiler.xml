@@ -9,12 +9,14 @@
         <module name="spring02" />
         <module name="spring01" />
         <module name="spring00" />
+        <module name="springMVC00" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring00" target="1.5" />
       <module name="spring01" target="1.5" />
       <module name="spring02" target="1.5" />
+      <module name="springMVC00" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
