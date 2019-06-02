@@ -27,5 +27,14 @@
         <button>提交</button>
     </form>
 </div>
+<div>
+    <h1>User</h1>
+    <form action="user" method="post">
+        username <input type="text" name="username">
+        sex <input type="text" name="sex">
+        birthday <input type="text" name="birthday">
+        <button>提交</button>
+    </form>
+</div>
 </body>
 </html>
