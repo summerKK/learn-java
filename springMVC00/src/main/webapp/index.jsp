@@ -20,6 +20,10 @@
         id: <input type="text" name="id">
         username <input type="text" name="user.username">
         sex <input type="text" name="user.sex">
+        username <input type="text" name="list[0].username">
+        sex <input type="text" name="list[0].sex">
+        username <input type="text" name="map['summer'].username">
+        sex <input type="text" name="map['summer'].sex">
         <button>提交</button>
     </form>
 </div>
