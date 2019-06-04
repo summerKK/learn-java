@@ -28,6 +28,9 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!--加载resources资源-->
+    <mvc:resources mapping="/js/**" location="/js/"/>
+
     <!-- 添加加载的组件 -->
     <mvc:annotation-driven conversion-service="conversionServiceFactoryBean"/>
 

@@ -16,7 +16,7 @@
       <module name="spring00" target="1.5" />
       <module name="spring01" target="1.5" />
       <module name="spring02" target="1.5" />
-      <module name="springMVC00" target="1.7" />
+      <module name="springMVC00" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
