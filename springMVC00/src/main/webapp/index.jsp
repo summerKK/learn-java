@@ -36,5 +36,9 @@
         <button>提交</button>
     </form>
 </div>
+<div>
+    <h1>SessionAttributes</h1>
+    <a href="session-attirbutes">SessionAttributes</a>
+</div>
 </body>
 </html>
