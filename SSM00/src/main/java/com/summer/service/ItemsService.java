@@ -1,4 +1,4 @@
-package com.summer.services;
+package com.summer.service;
 
 import com.summer.domain.Items;
 

@@ -2,7 +2,7 @@ package com.summer;
 
 import com.summer.dao.ItemsDao;
 import com.summer.domain.Items;
-import com.summer.services.ItemsService;
+import com.summer.service.ItemsService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
