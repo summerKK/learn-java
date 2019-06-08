@@ -4,10 +4,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Items implements Serializable {
-
     private Integer id;
     private String name;
-    private Double price;
+    private Float price;
     private String pic;
     private Date createtime;
     private String detail;
@@ -28,11 +27,11 @@ public class Items implements Serializable {
         this.name = name;
     }
 
-    public Double getPrice() {
+    public Float getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(Float price) {
         this.price = price;
     }
 
