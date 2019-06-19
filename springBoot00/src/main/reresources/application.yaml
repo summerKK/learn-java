@@ -3,3 +3,10 @@ jdbc:
   url: jdbc:mysql://localhost:3306/summer
   username: root
   password: root
+server:
+  port: 8081
+
+# 日志级别
+logging:
+  level:
+    com.summer: debug
