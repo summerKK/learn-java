@@ -1,12 +1,22 @@
-jdbc:
-  driverClassName: com.mysql.cj.jdbc.Driver
-  url: jdbc:mysql://localhost:3306/summer
-  username: root
-  password: root
+# 端口号
 server:
   port: 8081
 
-# 日志级别
+# 日志
 logging:
   level:
     com.summer: debug
+
+# 数据库配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql::/localhost:3306/summer
+    username: root
+    password: root
+
+# mybatis
+mybatis:
+  configuration:
+    # column转驼峰法
+    map-underscore-to-camel-case: true
